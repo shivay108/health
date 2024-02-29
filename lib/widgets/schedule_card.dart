@@ -21,7 +21,7 @@ class ScheduleCard extends StatelessWidget {
     return Card(
       elevation: 4.0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(20.0),
       ),
       child: Container(
         padding: const EdgeInsets.all(8.0),
@@ -39,7 +39,7 @@ class ScheduleCard extends StatelessWidget {
                 width: 90.0,
                 height: 90.0,
                 decoration: BoxDecoration(
-                  color: Colors.grey[400],
+                  color: const Color(0xFFC4C4C4),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: ClipRRect(
@@ -65,8 +65,8 @@ class ScheduleCard extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 7.0),
                       child: Text(
                         title,
-                        style: GoogleFonts.roboto(
-                            fontSize: 22, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(
+                            fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                     ),
                     const SizedBox(width: 15.0),
@@ -86,20 +86,20 @@ class ScheduleCard extends StatelessWidget {
                     children: [
                       Text(
                         'Cyphen -D',
-                        style: GoogleFonts.roboto(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                       const SizedBox(width: 8.0),
                       Text(
                         timing,
-                        style: GoogleFonts.roboto(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                       const SizedBox(width: 8.0),
                       Text(
                         'Omip-D',
-                        style: GoogleFonts.roboto(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
@@ -112,8 +112,8 @@ class ScheduleCard extends StatelessWidget {
                     children: [
                       Text(
                         timing2,
-                        style: GoogleFonts.roboto(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),

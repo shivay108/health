@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ModuleCard extends StatelessWidget {
   final String title;
@@ -28,7 +29,7 @@ class ModuleCard extends StatelessWidget {
                 height: 70,
                 margin: const EdgeInsets.symmetric(vertical: 5),
                 decoration: BoxDecoration(
-                  color: Colors.grey[400],
+                  color: const Color(0xFFC4C4C4),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -40,8 +41,8 @@ class ModuleCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: const TextStyle(
-                      color: Colors.black,
+                    style:  GoogleFonts.poppins(
+                      color: const Color(0xFF18616C),
                       fontSize: 10,
                     ),
                   ),
