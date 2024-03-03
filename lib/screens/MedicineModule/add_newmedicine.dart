@@ -12,6 +12,28 @@ class _NewMedicinePageState extends State<NewMedicinePage> {
   String? _selectedItem;
   double _sliderValue = 1;
   late DateTime _selectedDate = DateTime.now();
+  int _medicineAmount = 0;
+
+  void _incrementMedicine() {
+    setState(() {
+      _medicineAmount++;
+    });
+  }
+
+  void _decrementMedicine() {
+    setState(() {
+      if (_medicineAmount > 0) {
+        _medicineAmount--;
+      }else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Value Can't be decremented Anymore"),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+    });
+  }
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -124,13 +146,18 @@ class _NewMedicinePageState extends State<NewMedicinePage> {
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(8),
                           bottomRight: Radius.circular(8))),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 18.0),
+                  child:  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
                     child: Center(
-                        child: Text(
-                      'Medicine Amount',
-                      style: TextStyle(fontSize: 18),
-                    )),
+                        child: _medicineAmount == 0
+                            ? const Text(
+                          'Medicine Amount',
+                          style: TextStyle(fontSize: 18),
+                        )
+                            : Text(
+                          '$_medicineAmount',
+                          style: const TextStyle(fontSize: 18),
+                        ),),
                   ),
                 ),
               ),
@@ -148,10 +175,15 @@ class _NewMedicinePageState extends State<NewMedicinePage> {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(
-                        'assets/icons/remove_circle_outline.png',
-                        width: 45,
-                        height: 70,
+                      GestureDetector(
+                        onTap: (){
+                          _decrementMedicine();
+                        },
+                        child: Image.asset(
+                          'assets/icons/remove_circle_outline.png',
+                          width: 45,
+                          height: 70,
+                        ),
                       ),
                       const SizedBox(
                         width: 7,
@@ -166,10 +198,15 @@ class _NewMedicinePageState extends State<NewMedicinePage> {
                       const SizedBox(
                         width: 7,
                       ),
-                      Image.asset(
-                        'assets/icons/add_circle_outline.png',
-                        width: 45,
-                        height: 70,
+                      GestureDetector(
+                        onTap: () {
+                          _incrementMedicine();
+                        },
+                        child: Image.asset(
+                          'assets/icons/add_circle_outline.png',
+                          width: 45,
+                          height: 70,
+                        ),
                       ),
                     ],
                   ),
