@@ -169,7 +169,7 @@ class _WalkingTrackerState extends State<WalkingTracker> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 440),
+            padding: const EdgeInsets.only(top: 410),
             child: Card(
               color: Colors.white,
               elevation: 10,
@@ -223,7 +223,7 @@ class _WalkingTrackerState extends State<WalkingTracker> {
               ),
             ),
           Padding(
-            padding: const EdgeInsets.only(top: 660),
+            padding: const EdgeInsets.only(top: 630),
             child:Card(
               color: Colors.white,
               elevation: 10,

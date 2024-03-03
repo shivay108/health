@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_app/screens/LoginScreens/splash_screen.dart';
-import 'package:medicine_app/screens/RunningTrackerModule/running_screen.dart';
-
-import 'screens/MedicineSubstituteModule/medicine_substitute.dart';
 void main() {
   runApp(const MyApp());
 }
